@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy MMORPG - Phase 7 & 8</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+            font-family: sans-serif;
+        }
+
+        #ui {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            line-height: 1.5;
+            border: 1px solid #444;
+            z-index: 10;
+            user-select: none;
+        }
+
+        #ui-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        #toggle-btn {
+            background: #333;
+            color: #ffa726;
+            border: 1px solid #666;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 11px;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+            #toggle-btn:hover {
+                background: #444;
+                color: #fff;
+            }
+
+        #crosshair {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 5;
+        }
+    </style>
+
+    <!-- Import Map including three and three/addons/ -->
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+          }
+        }
+    </script>
+</head>
+<body>
+    <div id="ui">
+        <div id="ui-header">
+            <strong style="color: #ffa726;">Fantasy MMORPG Prototype</strong>
+            <button id="toggle-btn" onclick="toggleTips()">Hide Controls</button>
+        </div>
+        <div id="tips-content" style="margin-top: 6px;">
+            <span id="status" style="color: #ccc;">Phases 7 & 8 Active</span><br><br>
+            <b>W A S D</b> Move | <b>Shift</b> Sprint | <b>Space</b> Jump | <b>Q</b> Dodge<br>
+            <b>F</b> Attack | <b>E</b> Interact/Loot | <b>I / Tab</b> Inventory
+        </div>
+    </div>
+
+    <div id="crosshair">+</div>
+
+    <script>
+        function toggleTips() {
+            const content = document.getElementById('tips-content');
+            const btn = document.getElementById('toggle-btn');
+
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                btn.textContent = 'Hide Controls';
+            } else {
+                content.style.display = 'none';
+                btn.textContent = 'Show Controls';
+            }
+        }
+    </script>
+
+    <script type="module" src="./src/core/main.js"></script>
+</body>
+</html>

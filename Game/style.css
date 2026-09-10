@@ -1,0 +1,8 @@
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#10151d;font-family:Arial,sans-serif}
+canvas{display:block}
+#hud{position:fixed;top:16px;left:16px;z-index:10;color:white;background:rgba(0,0,0,.68);padding:14px 16px;border-radius:10px;line-height:1.5;min-width:340px;backdrop-filter:blur(6px);pointer-events:none}
+.title{font-size:20px;font-weight:700;margin-bottom:4px}
+.controls{margin-top:9px;font-size:13px;opacity:.94}
+#crosshair{position:fixed;left:50%;top:50%;z-index:10;transform:translate(-50%,-50%);color:white;font-size:22px;pointer-events:none;text-shadow:0 0 5px #000}
+#help{position:fixed;right:18px;bottom:18px;z-index:10;color:white;background:rgba(0,0,0,.55);padding:8px 12px;border-radius:8px;font-size:13px;pointer-events:none}
+#error{position:fixed;left:18px;right:18px;bottom:60px;z-index:20;padding:12px;background:rgba(130,0,0,.94);color:#fff;border-radius:8px;white-space:pre-wrap}
